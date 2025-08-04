@@ -22,7 +22,7 @@ function handleGuess(input) {
 
 function compareRooms(guess, target) {
   let feedback = {};
-  ['height', 'width', 'room_number', 'floor', 'difficulty'].forEach(stat => {
+  ['height', 'width', 'room_number'].forEach(stat => {
     if (guess[stat] === target[stat]) {
       feedback[stat] = '✅';
     } else if (guess[stat] > target[stat]) {
@@ -48,7 +48,7 @@ function displayFeedback(roomName, feedback) {
   row.appendChild(nameEl);
 
   // For each stat, add the feedback emoji
-  for (const stat of ['height', 'width', 'room_number', 'floor', 'difficulty']) {
+  for (const stat of ['height', 'width', 'room_number']) {
     const statEl = document.createElement('span');
     statEl.textContent = feedback[stat];
     statEl.title = stat; // Tooltip for clarity
