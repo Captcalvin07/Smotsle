@@ -9,10 +9,10 @@ fetch('data/rooms.json')
   });
 
 function handleGuess(input) {
-  showMessage(input);
+  alert(input);
   const guess = rooms.find(room => room.name.toLowerCase() === input.toLowerCase());
   if (!guess) {
-    showMessage("Room not found");
+    alert("Room not found");
     return;
   }
 
